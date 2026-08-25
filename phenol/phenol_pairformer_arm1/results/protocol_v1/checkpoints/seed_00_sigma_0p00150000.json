@@ -1,0 +1,166 @@
+{
+  "sigma_nm": 0.0015,
+  "fit_seed": 261301,
+  "selection_seed": 261401,
+  "best_epoch": 38,
+  "fit_noise_sha256": "646780919fd752b1735277f595a412fa9520a736d81d6e2db99cd9b7237d4932",
+  "selection_noise_sha256": "e28739def1f25927517ad846624de8e28124860188257fd38ec0289700c82fb8",
+  "fit": {
+    "objective_per_frame": 14.793823010253906,
+    "zero_score_objective_per_frame": 18.010066265869142,
+    "fractional_gain_over_zero_score": 0.17858031215078507,
+    "samples_including_antithetic_signs": 20000
+  },
+  "selection": {
+    "objective_per_frame": 14.76232489013672,
+    "zero_score_objective_per_frame": 17.965204162597658,
+    "fractional_gain_over_zero_score": 0.1782823753892604,
+    "samples_including_antithetic_signs": 4000
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "fit_objective_per_frame": 18.005026931762696,
+      "selection_objective_per_frame": 17.957162994384767,
+      "selection_fractional_gain": 0.0004475968177212186
+    },
+    {
+      "epoch": 2,
+      "fit_objective_per_frame": 17.970088674926757,
+      "selection_objective_per_frame": 17.95919775390625,
+      "selection_fractional_gain": 0.00033433567673635256
+    },
+    {
+      "epoch": 4,
+      "fit_objective_per_frame": 17.568053387451172,
+      "selection_objective_per_frame": 16.96067529296875,
+      "selection_fractional_gain": 0.05591524930845304
+    },
+    {
+      "epoch": 6,
+      "fit_objective_per_frame": 15.391510034179687,
+      "selection_objective_per_frame": 15.342624816894531,
+      "selection_fractional_gain": 0.14598104880784823
+    },
+    {
+      "epoch": 8,
+      "fit_objective_per_frame": 15.207952032470702,
+      "selection_objective_per_frame": 15.122809638977051,
+      "selection_fractional_gain": 0.15821665581392508
+    },
+    {
+      "epoch": 10,
+      "fit_objective_per_frame": 15.165199270629882,
+      "selection_objective_per_frame": 15.054650535583496,
+      "selection_fractional_gain": 0.1620106067635868
+    },
+    {
+      "epoch": 12,
+      "fit_objective_per_frame": 15.072892810058594,
+      "selection_objective_per_frame": 14.989071098327637,
+      "selection_fractional_gain": 0.16566096534912356
+    },
+    {
+      "epoch": 14,
+      "fit_objective_per_frame": 15.034726675415039,
+      "selection_objective_per_frame": 14.943296279907226,
+      "selection_fractional_gain": 0.1682089363048731
+    },
+    {
+      "epoch": 16,
+      "fit_objective_per_frame": 14.971798791503906,
+      "selection_objective_per_frame": 14.892829216003419,
+      "selection_fractional_gain": 0.17101809246291322
+    },
+    {
+      "epoch": 18,
+      "fit_objective_per_frame": 14.942448193359375,
+      "selection_objective_per_frame": 14.9372241897583,
+      "selection_fractional_gain": 0.16854692801896498
+    },
+    {
+      "epoch": 20,
+      "fit_objective_per_frame": 14.911868440246582,
+      "selection_objective_per_frame": 14.90114808654785,
+      "selection_fractional_gain": 0.17055503785640047
+    },
+    {
+      "epoch": 22,
+      "fit_objective_per_frame": 14.888860583496093,
+      "selection_objective_per_frame": 14.863946800231934,
+      "selection_fractional_gain": 0.17262577893895203
+    },
+    {
+      "epoch": 24,
+      "fit_objective_per_frame": 14.865949739074708,
+      "selection_objective_per_frame": 14.848897361755371,
+      "selection_fractional_gain": 0.17346347821252306
+    },
+    {
+      "epoch": 26,
+      "fit_objective_per_frame": 14.855644801330566,
+      "selection_objective_per_frame": 14.808028579711914,
+      "selection_fractional_gain": 0.1757383636896691
+    },
+    {
+      "epoch": 28,
+      "fit_objective_per_frame": 14.85115233001709,
+      "selection_objective_per_frame": 14.796558181762695,
+      "selection_fractional_gain": 0.17637684226444084
+    },
+    {
+      "epoch": 30,
+      "fit_objective_per_frame": 14.845699272155763,
+      "selection_objective_per_frame": 14.789598579406737,
+      "selection_fractional_gain": 0.17676423571084798
+    },
+    {
+      "epoch": 32,
+      "fit_objective_per_frame": 14.827536134338379,
+      "selection_objective_per_frame": 14.918460388183593,
+      "selection_fractional_gain": 0.16959138047299116
+    },
+    {
+      "epoch": 34,
+      "fit_objective_per_frame": 14.824191848754882,
+      "selection_objective_per_frame": 14.835338195800782,
+      "selection_fractional_gain": 0.17421822421105826
+    },
+    {
+      "epoch": 36,
+      "fit_objective_per_frame": 14.834177854919433,
+      "selection_objective_per_frame": 14.773747192382812,
+      "selection_fractional_gain": 0.1776465739732167
+    },
+    {
+      "epoch": 38,
+      "fit_objective_per_frame": 14.814946115112305,
+      "selection_objective_per_frame": 14.76232489013672,
+      "selection_fractional_gain": 0.1782823753892604
+    },
+    {
+      "epoch": 40,
+      "fit_objective_per_frame": 14.797304530334472,
+      "selection_objective_per_frame": 14.796295471191407,
+      "selection_fractional_gain": 0.1763914655645108
+    }
+  ],
+  "architecture": {
+    "family": "graph-free scalar Pairformer",
+    "parameters": 254483,
+    "inputs": [
+      "element identity",
+      "all pair distances",
+      "noise sigma"
+    ],
+    "bond_graph_used": false,
+    "atom_index_embedding_used": false,
+    "translation_rotation_reflection_invariant": true,
+    "permutation_equivariant_encoder_and_invariant_scalar_pooling": true,
+    "scalar_action": true,
+    "score_from_autograd": true,
+    "component_heads": false
+  },
+  "checkpoint": "checkpoints/seed_00_sigma_0p00150000.pt",
+  "checkpoint_sha256": "801eac33509d408019c12e7d32f9418cd8d823a8c9e8c291a3b2d70aeab46010"
+}

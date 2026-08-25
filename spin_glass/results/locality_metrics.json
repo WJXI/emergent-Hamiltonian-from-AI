@@ -1,0 +1,15 @@
+{
+  "model": "phase-1 low-noise epoch-26",
+  "checkpoint": "../checkpoints/epoch_26.pt",
+  "checkpoint_sha256": "880adc11f48253e85fdbd6205f8dafad5f1cadc877e02675337b4a21932ea048",
+  "canonical_num_sequences": 2000,
+  "canonical_num_configurations": 10000,
+  "num_all_offdiagonal_pair_observations": 6340965,
+  "t_eval": 0.0001,
+  "far_to_support_mean_abs_ratio_all_r_ge_3": 0.020904794673938215,
+  "far_to_support_absolute_mass_ratio_all_r_ge_3": 0.17690835743486277,
+  "far_squared_mass_fraction_all_offdiag": 0.0212218114650279,
+  "error_bars": "interquartile range over all pair observations at each distance",
+  "observations_sha256": "2fc0a4405889d6c3de2b32e2e47462aa3031dce52e95b7d91f038acbb1a3e758",
+  "summary_sha256": "292256ac8cfe1389b5a9f47dfbd04b7e9a91694f773e86e0a3c5265fcb4336a8"
+}

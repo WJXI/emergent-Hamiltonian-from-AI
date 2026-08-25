@@ -1,0 +1,43 @@
+{
+  "schema_version": 2,
+  "protocol_name": "phenol-paper-independent-physical-holdout",
+  "md_config": "configs/fresh_physical_phenol_dsm_final_v1.json",
+  "molecule": {
+    "atoms": 13,
+    "bonds": [[0, 1], [0, 5], [0, 7], [1, 2], [1, 8], [2, 3], [2, 9], [3, 4], [3, 6], [4, 5], [4, 10], [5, 11], [6, 12]]
+  },
+  "selection": {
+    "families": [0, 1, 2, 3, 4, 5, 6, 7],
+    "production_frame_stride": 10,
+    "expected_frames_per_family": 150,
+    "expected_total_frames": 1200,
+    "selected_frame_interval_picoseconds": 20.0
+  },
+  "targets": {
+    "temperature_kelvin": 298.15,
+    "total": "instantaneous internal beta force",
+    "bond": "OpenMM HarmonicBondForce beta force",
+    "angle": "OpenMM HarmonicAngleForce beta force",
+    "proper": "OpenMM bonded-path PeriodicTorsionForce beta force",
+    "improper": "OpenMM out-of-plane PeriodicTorsionForce beta force",
+    "graph_distance_3": "nonzero intramolecular OpenMM exception beta force",
+    "graph_distance_gt_3": "PME real-space intramolecular beta force"
+  },
+  "bootstrap": {
+    "block_frames": 10,
+    "block_picoseconds": 200.0,
+    "replicates": 2000,
+    "seed": 260630711,
+    "resampling": "families with replacement, then contiguous time blocks"
+  },
+  "runtime": {
+    "device": "cuda",
+    "batch_size": 64
+  },
+  "coulomb_constant_kj_mol_nm_e2": 138.935456,
+  "guardrails": {
+    "fit_or_selection_uses_physical_labels": false,
+    "physical_evaluation_occurs_after_model_and_projection_freeze": true,
+    "microscopic_component_uniqueness_claimed": false
+  }
+}

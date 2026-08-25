@@ -1,0 +1,35 @@
+{
+  "canonical_status": "formal independent sequence-OOD test set",
+  "environment": "ai4s",
+  "source": "the two chunk_*.npz files in this directory",
+  "source_sha256": "c6f49574843ea96bedcd6baf08448fe82ccdba963ff576d04d3bdc2b7dc378c7",
+  "archived_overlapping_test": "../mcmc_same_sequences",
+  "sequence_seed": 20260830,
+  "num_sequences": 2000,
+  "snapshots_per_sequence": 5,
+  "target_temperature": 0.05,
+  "replicas": 16,
+  "burn_in": 2000,
+  "thinning": 100,
+  "training_sequence_overlap": 0,
+  "old_test_sequence_overlap": 0,
+  "phase2_validation_sequence_overlap": 0,
+  "phase2_prior_test_sequence_overlap": 0,
+  "fields": [
+    "sequences",
+    "spins",
+    "tangent_forces"
+  ],
+  "chunks": [
+    {
+      "name": "chunk_0000.npz",
+      "sha256": "b94ad55a7bca61388ae315c55d04f80add032d7d3c41f54a49d8779f6b40b682",
+      "bytes": 3935770
+    },
+    {
+      "name": "chunk_0001.npz",
+      "sha256": "98ea510475fcf26762cece66aa38c7b33f74da5d7ed38c51a3735ac4f8e79336",
+      "bytes": 3921154
+    }
+  ]
+}

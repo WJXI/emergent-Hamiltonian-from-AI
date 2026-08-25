@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "protocol_name": "phenol-arm3-sector-preserving-constant-projection-v1",
+  "status": "final paper protocol; physical holdout is excluded from fitting and ridge selection",
+  "parent_arm3_protocol": "configs/protocol_v1.json",
+  "parent_result_directory": "results/protocol_v1",
+  "definition": "Network 3-P denotes the sector-preserving constant projection of Network 3",
+  "controlled_change": {
+    "unchanged": [
+      "frozen Arm 3 checkpoints and three-seed ensemble",
+      "frozen low-sigma readout at 0.000375 nm",
+      "270 raw and 240 retained scalar basis functions",
+      "fit families 00-04 with 5000 frames",
+      "ridge-selection family 05 with 1000 frames",
+      "ridge grid and trace-normalized L2 regularization",
+      "eight-family 1200-frame post-hoc physical audit",
+      "component targets, internal-force projection, metrics, and hierarchical bootstrap"
+    ],
+    "projected_quantity": "fit one alpha_c per sector to the corresponding frozen Network 3 sector score"
+  },
+  "projection": {
+    "definition": "alpha_c=argmin E_fit ||-J_{Phi_c}^T alpha_c-s_c^Arm3||^2 + lambda_c trace(G_cc)/dim(c) ||alpha_c||^2",
+    "blocks": [
+      "bond",
+      "angle",
+      "proper",
+      "out_of_plane",
+      "graph_distance_3",
+      "graph_distance_gt_3"
+    ],
+    "fit_families": [0, 1, 2, 3, 4],
+    "selection_families": [5],
+    "ridges": [1e-10, 1e-9, 1e-8, 1e-7, 1e-6, 1e-5, 0.0001, 0.001, 0.01],
+    "ridge_selection": "minimum family-05 block-score RMS difference relative to the corresponding frozen dynamic Arm 3 block",
+    "dynamic_readout": "arithmetic mean of three frozen Network 3 models at sigma=0.000375 nm",
+    "physical_labels_used_for_fit_or_selection": false,
+    "collapse_gate": {
+      "minimum_score_cosine": 0.99,
+      "maximum_rms_difference_over_dynamic_score": 0.15
+    }
+  },
+  "evaluation": {
+    "coordinate_only": [
+      "each constant sector versus its dynamic Network 3 sector on fit and family 05",
+      "assembled constant total versus dynamic Network 3 total on fit and family 05"
+    ],
+    "postfreeze": [
+      "each constant block versus its corresponding OpenMM sector on eight independent families",
+      "assembled constant total versus the projected total physical force",
+      "constant sectors and total versus dynamic Network 3"
+    ],
+    "physical_holdout_status": "post-hoc evaluation; physical labels are not used in coefficient fitting or ridge selection"
+  },
+  "interpretation": {
+    "supported_if_successful": "configuration dependence of the sector decomposition already selected by Network 3 can be replaced by configuration-independent coefficients in the same basis",
+    "not_supported": "unique or basis-independent recovery of the microscopic OpenMM decomposition"
+  }
+}

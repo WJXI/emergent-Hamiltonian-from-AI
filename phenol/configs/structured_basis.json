@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "protocol_name": "phenol-fixed-geometric-basis",
+  "molecule": {
+    "atoms": 13,
+    "elements": ["C", "C", "C", "C", "C", "C", "O", "H", "H", "H", "H", "H", "H"],
+    "bonds": [[0, 1], [0, 5], [0, 7], [1, 2], [1, 8], [2, 3], [2, 9], [3, 4], [3, 6], [4, 5], [4, 10], [5, 11], [6, 12]]
+  },
+  "dictionary": {
+    "blocks": ["bond", "angle", "proper", "out_of_plane", "graph_distance_3", "graph_distance_gt_3"],
+    "node_type_rule": "element + degree + sorted one-hop neighbor elements",
+    "event_identity_embedding": false,
+    "configuration_dependent_local_coefficients": false,
+    "radial_and_angle_basis": {
+      "standardization": "training-type pooled median and IQR/1.349, with standard-deviation fallback",
+      "gaussian_centers_standardized": [-2.0, -1.0, 0.0, 1.0, 2.0],
+      "gaussian_width_standardized": 0.85,
+      "include_linear_and_quadratic": true
+    },
+    "proper_fourier_orders": [1, 2, 3],
+    "out_of_plane_coordinate": "squared normalized scalar triple product",
+    "proper_candidates": "all simple graph paths of length three",
+    "out_of_plane_candidates": "all unordered triples of neighbors around every degree-at-least-three center",
+    "graph_distance_3_candidates": "all atom pairs at molecular-graph distance three",
+    "graph_distance_gt_3_candidates": "all atom pairs at molecular-graph distance greater than three"
+  },
+  "guardrails": {
+    "coordinate_arrays_only": true,
+    "energy_labels_used_for_basis": false,
+    "force_labels_used_for_basis": false,
+    "component_labels_used_for_basis": false,
+    "force_field_parameters_used_for_basis": false,
+    "event_or_atom_name_embeddings": false
+  }
+}

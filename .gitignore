@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+*.running.pt
+spin_glass/data/train_40000/
+spin_glass/data/generated/
+spin_glass/results/direct_w_evaluation/
+spin_glass/figures/
+phenol/reproduced/
+phenol/phenol_pairformer_arm3/results/test_artifact/
+phenol/data/fresh_physical_v1/packings/
+phenol/data/fresh_physical_v1/production/
+phenol/data/fresh_physical_v1/diagnostics/
+phenol/results/

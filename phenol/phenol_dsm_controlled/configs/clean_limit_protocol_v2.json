@@ -1,0 +1,83 @@
+{
+  "schema_version": 2,
+  "protocol_name": "phenol-network-2-independent-low-noise-dsm",
+  "status": "final paper protocol",
+  "dataset_manifest": "data/fresh_physical_v1/model_pilot_v1/dataset_manifest.json",
+  "splits": {
+    "fit": "train",
+    "selection": "validation",
+    "legacy_test_used": false,
+    "previous_final_holdout_used": false,
+    "new_dsm_final_holdout_generated": false
+  },
+  "molecule": {
+    "atoms": 13,
+    "elements": ["C", "C", "C", "C", "C", "C", "O", "H", "H", "H", "H", "H", "H"],
+    "bonds": [[0, 1], [0, 5], [0, 7], [1, 2], [1, 8], [2, 3], [2, 9], [3, 4], [3, 6], [4, 5], [4, 10], [5, 11], [6, 12]]
+  },
+  "common_model": {
+    "action_at_each_sigma": "S_sigma(R)=sum_a eta_a(sigma) Phi_a(R)",
+    "configuration_dependent_coefficients": false,
+    "scalar_conservative_action": true,
+    "raw_basis_count": 270,
+    "coefficient_coupling_across_sigma": false,
+    "centered_cartesian_noise": true,
+    "single_sigma_objective": "one half mean norm[epsilon-sigma grad_R S_sigma(R+sigma epsilon)] squared",
+    "antithetic_noise": true
+  },
+  "arms": {
+    "true_topology": {
+      "basis": "270 raw fixed generic geometry functions grouped by element and one-hop molecular-graph environment",
+      "molecular_graph_used": true,
+      "configuration_dependent_coefficients": false
+    }
+  },
+  "preconditioner": {
+    "source": "fit-coordinate clean score Gram only",
+    "structured_whitening": "within declared physical sectors",
+    "relative_eigenvalue_cutoff": 1e-7,
+    "absolute_eigenvalue_cutoff": 1e-10,
+    "raw_dimension_is_capacity_control": true,
+    "effective_rank_is_reported_as_a_basis_property": true
+  },
+  "dsm": {
+    "noise_sigmas_nm": [0.000375, 0.00075, 0.0015],
+    "fit_noise_repeats_per_sigma": 2,
+    "selection_noise_repeats_per_sigma": 2,
+    "fit_noise_seeds": [261301, 261302, 261303],
+    "selection_noise_seeds": [261401, 261402, 261403],
+    "batch_size": 64,
+    "dtype": "float64",
+    "device": "cuda",
+    "ridge_grid": [1e-12, 1e-11, 1e-10, 1e-9, 1e-8, 1e-7, 1e-6, 1e-5, 0.0001, 0.001, 0.01],
+    "selection_metric": "within-sigma validation fractional gain over zero-score DSM baseline"
+  },
+  "clean_readout": {
+    "low_sigma_nm": 0.000375,
+    "high_sigma_nm": 0.00075,
+    "extrapolation": "eta_clean=[sigma_high^2 eta(low)-sigma_low^2 eta(high)]/[sigma_high^2-sigma_low^2]",
+    "assumed_leading_bias": "O(sigma^2)",
+    "noise_seed_ensemble": "arithmetic mean of three independently fit extrapolated raw coefficient vectors",
+    "coordinate_only_stability_gate": {
+      "minimum_pairwise_seed_score_cosine": 0.98,
+      "minimum_low_vs_high_sigma_score_cosine": 0.98,
+      "fallback_if_gate_fails": "freeze the three-seed mean at sigma=0.000375 nm without extrapolation"
+    }
+  },
+  "freeze_and_holdout": {
+    "freeze_all_three_arm_ensembles_before_new_MD": true,
+    "planned_new_final_families": 8,
+    "planned_total_MD_ns": 24.0,
+    "qualification_before_label_opening": true,
+    "force_and_component_labels_opened_once_after_freeze": true
+  },
+  "guardrails": {
+    "fit_and_selection_arrays": ["phenol_coordinates_nm", "family_id"],
+    "energy_or_force_labels_for_fit_selection": false,
+    "OpenMM_or_GAFF_parameters_for_basis": false,
+    "OpenMM_force_term_lists_for_basis": false,
+    "event_or_atom_name_embeddings": false,
+    "shared_law_residual_decomposition": false,
+    "claim_boundary": "topology-conditioned PMF Hamiltonian and canonical geometry components, not unique microscopic OpenMM force-group recovery"
+  }
+}

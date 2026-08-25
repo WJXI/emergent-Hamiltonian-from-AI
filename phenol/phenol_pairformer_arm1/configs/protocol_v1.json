@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "protocol_name": "phenol-graph-free-pairformer-arm1-low-noise-dsm-v1",
+  "status": "final paper protocol; physical holdout labels are excluded from training and checkpoint selection",
+  "network": "Network 1",
+  "parent_training_protocol": "phenol_dsm_controlled/configs/clean_limit_protocol_v2.json",
+  "dataset_manifest": "data/fresh_physical_v1/model_pilot_v1/dataset_manifest.json",
+  "splits": {
+    "fit": "train",
+    "selection": "validation",
+    "fit_families": [0, 1, 2, 3, 4],
+    "selection_families": [5],
+    "fit_frames": 5000,
+    "selection_frames": 1000
+  },
+  "molecule": {
+    "atoms": 13,
+    "elements": ["C", "C", "C", "C", "C", "C", "O", "H", "H", "H", "H", "H", "H"]
+  },
+  "architecture": {
+    "family": "graph-free scalar Pairformer",
+    "single_width": 64,
+    "pair_width": 32,
+    "blocks": 4,
+    "attention_heads": 4,
+    "distance_rbf_count": 32,
+    "distance_rbf_min_nm": 0.06,
+    "distance_rbf_max_nm": 0.65,
+    "distance_rbf_width_multiplier": 1.5,
+    "element_embedding_only": true,
+    "all_pairs_used": true,
+    "bond_graph_used": false,
+    "atom_index_embedding_used": false,
+    "scalar_conservative_action": true,
+    "score": "minus gradient_R S_sigma(R)",
+    "configuration_dependent_internal_features": true,
+    "component_heads": false
+  },
+  "dsm": {
+    "noise_sigmas_nm": [0.000375, 0.00075, 0.0015],
+    "fit_noise_repeats_per_sigma": 2,
+    "selection_noise_repeats_per_sigma": 2,
+    "fit_noise_seeds": [261301, 261302, 261303],
+    "selection_noise_seeds": [261401, 261402, 261403],
+    "antithetic_noise": true,
+    "centered_cartesian_noise": true,
+    "single_sigma_objective": "one half mean over frames of norm[epsilon-sigma grad_R S_sigma(R+sigma epsilon)] squared",
+    "models_trained_independently_at_each_sigma": true,
+    "epochs": 40,
+    "batch_size": 256,
+    "learning_rate": 0.0005,
+    "weight_decay": 0.000001,
+    "gradient_clip": 10.0,
+    "validation_every_epochs": 2,
+    "dtype": "float32",
+    "device": "cuda"
+  },
+  "clean_readout": {
+    "low_sigma_nm": 0.000375,
+    "high_sigma_nm": 0.00075,
+    "extrapolation": "score_clean=[sigma_high^2 score_low-sigma_low^2 score_high]/[sigma_high^2-sigma_low^2]",
+    "noise_seed_ensemble": "arithmetic mean of three independently trained score functions",
+    "coordinate_only_stability_gate": {
+      "minimum_pairwise_seed_score_cosine": 0.98,
+      "minimum_low_vs_high_sigma_score_cosine": 0.98,
+      "fallback_if_gate_fails": "three-seed mean at 0.000375 nm"
+    }
+  },
+  "evaluation": {
+    "coordinate_only_model_selection": true,
+    "existing_holdout_coordinates": "phenol_dsm_controlled/results/final_holdout_v1/selected_coordinates.npz",
+    "existing_holdout_forces": "phenol_dsm_controlled/results/final_holdout_v1/raw_openmm_force_components.npz",
+    "bootstrap_protocol": "phenol_dsm_controlled/configs/final_holdout_v1.json",
+    "status": "independent-family post-hoc evaluation, not a new one-shot blind holdout"
+  },
+  "guardrails": {
+    "fit_and_selection_arrays": ["phenol_coordinates_nm", "family_id"],
+    "water_coordinates_used": false,
+    "energy_or_force_labels_used_for_fit_selection": false,
+    "molecular_bond_graph_used": false,
+    "OpenMM_or_GAFF_parameters_used": false,
+    "atom_names_or_indices_used_as_embeddings": false,
+    "holdout_force_labels_used_for_architecture_or_checkpoint_selection": false,
+    "claim_boundary": "expressive graph-free total PMF action only; no component allocation and no exact completeness theorem"
+  }
+}

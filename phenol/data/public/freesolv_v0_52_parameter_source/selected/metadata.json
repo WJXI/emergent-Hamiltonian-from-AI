@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "source": {
+    "name": "FreeSolv",
+    "version": "0.52",
+    "archive_record": "https://zenodo.org/records/1161245",
+    "archive_download": "https://zenodo.org/api/records/1161245/files/MobleyLab/FreeSolv-v0.52.zip/content",
+    "archive_md5": "9325d521ca4e737104c9066c5820b7a6",
+    "parameterization": "GAFF 1.7 atom types and parameters with AM1-BCC partial charges"
+  },
+  "sealed_reference_contract": {
+    "database_table_extracted": false,
+    "hydration_free_energy_scalar_read": false,
+    "calculated_or_experimental_reference_used": false
+  },
+  "molecules": {
+    "phenol": {
+      "freesolv_id": "mobley_20524",
+      "formula": "C6H6O",
+      "files": {
+        "amber/mobley_20524.frcmod": "4a79677a10f21ccd830e3eb1b063dfae855068209b945c468f0964305a774521",
+        "amber/mobley_20524.inpcrd": "6bbbfdae92cc3b2940209bc4733c8513e08b86708d4ddf06796bbaad66007853",
+        "amber/mobley_20524.prmtop": "0207a9bb663d06ae98f0795e27b1c7e4c9cdfff3a3202923400fb1e81c00d499",
+        "mol2files_gaff/mobley_20524.mol2": "f505a87f03dc6b3053efa53be516e1410156e222ecafa6d1aac1b98350d81394"
+      }
+    }
+  }
+}

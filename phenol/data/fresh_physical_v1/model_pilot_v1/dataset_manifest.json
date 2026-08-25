@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "protocol_name": "phenol-coordinate-only-training-and-selection-v1",
+  "coordinate_only": true,
+  "q1_derived_coordinates_used": false,
+  "dummy_atoms": 0,
+  "periodic_unwrap": "bond-graph minimum-image spanning tree",
+  "translation_gauge": "arithmetic center removed",
+  "physical_system": "13-atom phenol in 512 rigid TIP3P waters; no dummy atom",
+  "split_files": {
+    "train": {
+      "path": "train.npz",
+      "sha256": "f080e2bb9ac62e2ace8acfb4ec6ab26a532db3939e85855ae7f2ecf6059fde8b",
+      "frames": 5000,
+      "families": [0, 1, 2, 3, 4],
+      "production_ns": 10.0,
+      "arrays": ["phenol_coordinates_nm", "family_id"]
+    },
+    "validation": {
+      "path": "validation.npz",
+      "sha256": "e5e526fd606b758400524f0389ee1baeba8cb5f03531a82b55d13fb7944860dd",
+      "frames": 1000,
+      "families": [5],
+      "production_ns": 2.0,
+      "arrays": ["phenol_coordinates_nm", "family_id"]
+    }
+  }
+}

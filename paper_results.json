@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "paper_source": "../main_prl_revised_final.tex",
+  "spin_glass": {
+    "model": "epoch-26 low-noise-mixture checkpoint",
+    "checkpoint_sha256": "880adc11f48253e85fdbd6205f8dafad5f1cadc877e02675337b4a21932ea048",
+    "test_sequences": 2000,
+    "saved_configurations_per_sequence": 5,
+    "test_configurations": 10000,
+    "evaluation_time": 0.0001,
+    "pearson_W_J": 0.9929110382176045,
+    "class_balanced_a_star": 10.624393012285362,
+    "class_ratio_relative_rms": 0.18127821578756587,
+    "pointwise_relative_rmse": 0.16130238344708744,
+    "configuration_relative_rms": 0.04044901500106261,
+    "far_to_support_absolute_weight_ratio": 0.17690835743486277,
+    "support_absolute_weight_fraction": 0.849683829401599,
+    "shared_six_class_design_condition_number": 3.8112445436609232,
+    "aligned_overlap": {
+      "within_run_100_sweeps": 0.5094556415958568,
+      "within_run_100_sweeps_ci95": [0.5062483504607408, 0.512623830687303],
+      "independent_run_baseline": 0.5080653191133284,
+      "independent_run_baseline_ci95": [0.5051262443417764, 0.511070842649951]
+    }
+  },
+  "phenol": {
+    "fit": {"families": 5, "production_ns": 10.0, "frames": 5000},
+    "selection": {"families": 1, "production_ns": 2.0, "frames": 1000},
+    "holdout": {"families": 8, "production_ns": 24.0, "frames": 1200},
+    "noise_nm": 0.000375,
+    "raw_structured_basis_count": 270,
+    "retained_structured_basis_count": 240,
+    "network_3_P_R_const_squared": 0.9668775093724368,
+    "metrics": {
+      "network_1": {
+        "total": {"cosine": 0.9606424110598354, "nrmse": 0.28342500108024543}
+      },
+      "network_2": {
+        "total": {"cosine": 0.991518336303832, "nrmse": 0.13718186569113422},
+        "bond": {"cosine": 0.9646880809074272, "nrmse": 0.2745830519165848},
+        "angle": {"cosine": 0.9777189909261497, "nrmse": 0.2110803039579176},
+        "proper_torsion": {"cosine": 0.9928095672339339, "nrmse": 0.27467893024178075},
+        "out_of_plane": {"cosine": 0.6844764327625188, "nrmse": 1.1657912054364126},
+        "graph_distance_3_pair": {"cosine": 0.1774880001318081, "nrmse": 1.01964323400679},
+        "longer_range_pair": {"cosine": 0.4096737830108054, "nrmse": 1.1935599820814349}
+      },
+      "network_3": {
+        "total": {"cosine": 0.9671271206726527, "nrmse": 0.2578400490242725},
+        "bond": {"cosine": 0.9429472327301117, "nrmse": 0.34627292958179556},
+        "angle": {"cosine": 0.9538574724389929, "nrmse": 0.31240026467677673},
+        "proper_torsion": {"cosine": 0.9290160937267283, "nrmse": 0.6093114718642734},
+        "out_of_plane": {"cosine": 0.7661234343163039, "nrmse": 2.8734680151305367},
+        "graph_distance_3_pair": {"cosine": 0.06641066560671452, "nrmse": 1.154125843557726},
+        "longer_range_pair": {"cosine": -0.020301681797504252, "nrmse": 2.287855176275677}
+      },
+      "network_3_P": {
+        "total": {"cosine": 0.9823565019922867, "nrmse": 0.20852756607331943},
+        "bond": {"cosine": 0.9557722782253661, "nrmse": 0.321323965774968},
+        "angle": {"cosine": 0.9764882586444962, "nrmse": 0.2550871278788267},
+        "proper_torsion": {"cosine": 0.971276724619754, "nrmse": 0.5915748799168773},
+        "out_of_plane": {"cosine": 0.8433969463970518, "nrmse": 2.3503426609144267},
+        "graph_distance_3_pair": {"cosine": 0.08522550668083333, "nrmse": 1.1003567766233018},
+        "longer_range_pair": {"cosine": -0.023584957345858505, "nrmse": 2.0700393703944284}
+      }
+    }
+  }
+}

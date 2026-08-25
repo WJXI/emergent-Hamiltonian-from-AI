@@ -1,0 +1,10 @@
+{
+  "name": "test_500_ai4s",
+  "num_sequences": 500,
+  "snapshots_per_sequence": 5,
+  "burn_in": 2000,
+  "thinning": 100,
+  "base_seed": 410000,
+  "workers": 24,
+  "seconds": 129.44961619377136
+}

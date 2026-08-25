@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "protocol_name": "fresh-physical-phenol-unified-dsm-final-holdout-v1",
+  "path_suffix": "fresh_physical_phenol_dsm_final_v1",
+  "purpose": "final_holdout",
+  "frozen_checkpoint_manifest": "frozen_models.json",
+  "claim": "Independent same-condition molecular-dynamics holdout generated after all three networks and the sector-preserving projection were frozen; no holdout result alters training or model selection.",
+  "system": {
+    "phenol_atoms": 13,
+    "water_count": 512,
+    "box_length_nm": 2.5,
+    "water_model": "amber14-tip3p",
+    "nonbonded_method": "PME",
+    "nonbonded_cutoff_nm": 0.9,
+    "ewald_error_tolerance": 1e-5,
+    "use_dispersion_correction": true,
+    "ensemble": "NVT"
+  },
+  "packing": {
+    "generator": "packmol-21.2.3-seeded-periodic-box",
+    "tolerance_angstrom": 2.0,
+    "precision": 0.01,
+    "nloop": 500,
+    "timeout_seconds": 300,
+    "oxygen_oxygen_minimum_nm": 0.195,
+    "water_ligand_atom_minimum_nm": 0.195,
+    "packmol_seeds": [105001, 105003, 105005, 105007, 105009, 105011, 105013, 105015],
+    "oh_template_by_family": ["plus", "minus", "plus", "minus", "plus", "minus", "plus", "minus"]
+  },
+  "sampling": {
+    "temperature_kelvin": 298.15,
+    "friction_per_picosecond": 1.0,
+    "timestep_femtoseconds": 2.0,
+    "minimization_max_iterations": 500,
+    "families": 8,
+    "equilibration_picoseconds": 1000.0,
+    "equilibration_diagnostic_interval_picoseconds": 10.0,
+    "production_picoseconds": 3000.0,
+    "production_sample_interval_picoseconds": 2.0,
+    "velocity_seeds": [106001, 106003, 106005, 106007, 106009, 106011, 106013, 106015],
+    "wall_limit_seconds_per_invocation": 3600,
+    "wall_safety_reserve_seconds": 120
+  },
+  "splits": {
+    "final_holdout": [0, 1, 2, 3, 4, 5, 6, 7]
+  },
+  "qualification": {
+    "temperature_relative_tolerance": 0.05,
+    "potential_early_late_shift_sigma_max": 0.75,
+    "heavy_atom_pair_early_late_rms_z_max": 0.5,
+    "substitution_bond_mean_shift_nm_max": 0.01,
+    "water_shell_cutoff_nm": 0.35,
+    "initial_shell_production_start_jaccard_median_max": 0.2,
+    "oh_orientation_hysteresis_nm": 0.02,
+    "oh_orientation_transitions_per_family_min": 8,
+    "pooled_oh_plus_fraction_min": 0.35,
+    "pooled_oh_plus_fraction_max": 0.65,
+    "rate_implied_oh_plus_fraction_min": 0.35,
+    "rate_implied_oh_plus_fraction_max": 0.65,
+    "early_late_difference_z_max": 2.58,
+    "split_oh_minor_state_fraction_min": 0.15,
+    "family_pair_mean_rms_z_max": 1.0
+  },
+  "runtime": {
+    "platform": "OpenCL",
+    "platform_properties": {
+      "Precision": "mixed"
+    }
+  },
+  "data_firewall": {
+    "q1_derived_coordinates_forbidden": true,
+    "all_families_independent_packmol": true,
+    "production_arrays_coordinate_only": true,
+    "diagnostic_energies_for_training_forbidden": true,
+    "training_requires_fresh_family_qualification_pass": true
+  },
+  "holdout_firewall": {
+    "model_protocol_frozen_before_packmol": true,
+    "all_model_checkpoints_frozen_before_packmol": true,
+    "holdout_used_for_training": false,
+    "holdout_used_for_checkpoint_selection": false,
+    "holdout_used_for_hyperparameter_selection": false,
+    "one_shot_evaluation_only": true
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "model": "phase-1 low-noise epoch-26",
+  "checkpoint": "../checkpoints/epoch_26.pt",
+  "checkpoint_sha256": "880adc11f48253e85fdbd6205f8dafad5f1cadc877e02675337b4a21932ea048",
+  "test_sequences": 2000,
+  "test_configurations": 10000,
+  "support_pair_observations": 670110,
+  "t_eval": 0.0001,
+  "pearson_W_J": 0.9929110382176045,
+  "scale_W_per_J": 10.624393012285362,
+  "scale_fit_method": "equal-weight mean of the six class ratios <W>_c/J_c",
+  "class_ratios_W_over_J": [
+    10.746070151953038,
+    13.639486058830498,
+    12.287023730356808,
+    7.917090155612355,
+    10.237255127679513,
+    8.919432849279966
+  ],
+  "pointwise_relative_rmse": 0.16130238344708744,
+  "group_mean_relative_rmse": 0.14330720044342526,
+  "class_ratio_relative_rms": 0.18127821578756587,
+  "configuration_relative_rms": 0.04044901500106261,
+  "observations_sha256": "015d8805757a00feb896eda240664c71e8256ce122f3229bc67f74ccfd55811e",
+  "rng_seed_for_display_subsampling": 20260801,
+  "display_subsampling_only": true,
+  "statistics_use_all_observations": true,
+  "main_text_choice": "six-panel-3x2-single-column",
+  "single_panel_role": "supplementary-or-alternative"
+}

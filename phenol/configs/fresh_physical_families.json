@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "protocol_name": "phenol-training-and-selection-families-v1",
+  "path_suffix": "fresh_physical_v1",
+  "claim": "Coordinate-only data from six independently packed physical 13-atom phenol families: five for fitting and one for model selection.",
+  "system": {
+    "phenol_atoms": 13,
+    "water_count": 512,
+    "box_length_nm": 2.5,
+    "water_model": "amber14-tip3p",
+    "nonbonded_method": "PME",
+    "nonbonded_cutoff_nm": 0.9,
+    "ewald_error_tolerance": 1e-5,
+    "use_dispersion_correction": true,
+    "ensemble": "NVT"
+  },
+  "packing": {
+    "generator": "packmol-21.2.3-seeded-periodic-box",
+    "tolerance_angstrom": 2.0,
+    "precision": 0.01,
+    "nloop": 500,
+    "timeout_seconds": 300,
+    "oxygen_oxygen_minimum_nm": 0.195,
+    "water_ligand_atom_minimum_nm": 0.195,
+    "packmol_seeds": [71001, 71003, 71005, 71007, 71009, 71011],
+    "oh_template_by_family": ["plus", "minus", "plus", "minus", "plus", "minus"]
+  },
+  "sampling": {
+    "temperature_kelvin": 298.15,
+    "friction_per_picosecond": 1.0,
+    "timestep_femtoseconds": 2.0,
+    "minimization_max_iterations": 500,
+    "families": 6,
+    "equilibration_picoseconds": 1000.0,
+    "equilibration_diagnostic_interval_picoseconds": 10.0,
+    "production_picoseconds": 2000.0,
+    "production_sample_interval_picoseconds": 2.0,
+    "velocity_seeds": [72001, 72003, 72005, 72007, 72009, 72011],
+    "wall_limit_seconds_per_invocation": 3600,
+    "wall_safety_reserve_seconds": 120
+  },
+  "splits": {
+    "train": [0, 1, 2, 3, 4],
+    "validation": [5]
+  },
+  "qualification": {
+    "temperature_relative_tolerance": 0.05,
+    "potential_early_late_shift_sigma_max": 0.75,
+    "heavy_atom_pair_early_late_rms_z_max": 0.5,
+    "substitution_bond_mean_shift_nm_max": 0.01,
+    "water_shell_cutoff_nm": 0.35,
+    "initial_shell_production_start_jaccard_median_max": 0.2,
+    "oh_orientation_hysteresis_nm": 0.02,
+    "oh_orientation_transitions_per_family_min": 8,
+    "pooled_oh_plus_fraction_min": 0.35,
+    "pooled_oh_plus_fraction_max": 0.65,
+    "rate_implied_oh_plus_fraction_min": 0.35,
+    "rate_implied_oh_plus_fraction_max": 0.65,
+    "early_late_difference_z_max": 2.58,
+    "split_oh_minor_state_fraction_min": 0.15,
+    "family_pair_mean_rms_z_max": 1.0
+  },
+  "runtime": {
+    "platform": "CUDA",
+    "platform_properties": {
+      "Precision": "mixed",
+      "DeterministicForces": "true"
+    }
+  },
+  "data_firewall": {
+    "q1_derived_coordinates_forbidden": true,
+    "all_families_independent_packmol": true,
+    "production_arrays_coordinate_only": true,
+    "diagnostic_energies_for_training_forbidden": true,
+    "training_requires_fresh_family_qualification_pass": true
+  }
+}

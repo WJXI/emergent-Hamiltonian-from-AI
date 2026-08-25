@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "description": "Frozen model and projection artifacts used for all reported Phenol results",
+  "readout": "arithmetic mean of the three 0.000375 nm models for Networks 1 and 3; frozen lowest-sigma ensemble for Network 2",
+  "physical_labels_used_for_training_or_projection": false,
+  "artifacts": [
+    {"network": "Network 1", "path": "phenol_pairformer_arm1/results/protocol_v1/checkpoints/seed_00_sigma_0p00037500.pt", "sha256": "ee227a01f19b5860798ceda47b060fbdb5e24069e050a29daa29dbef87266848"},
+    {"network": "Network 1", "path": "phenol_pairformer_arm1/results/protocol_v1/checkpoints/seed_00_sigma_0p00075000.pt", "sha256": "5307021ba0b6eb8181cb7495e906f45c12483d914b84a4a30d05d5651bd3c2a6"},
+    {"network": "Network 1", "path": "phenol_pairformer_arm1/results/protocol_v1/checkpoints/seed_00_sigma_0p00150000.pt", "sha256": "801eac33509d408019c12e7d32f9418cd8d823a8c9e8c291a3b2d70aeab46010"},
+    {"network": "Network 1", "path": "phenol_pairformer_arm1/results/protocol_v1/checkpoints/seed_01_sigma_0p00037500.pt", "sha256": "b453d351d15c1079200e4f4ff2b71d25f008cce49e803be16c09a57cb54e24fa"},
+    {"network": "Network 1", "path": "phenol_pairformer_arm1/results/protocol_v1/checkpoints/seed_01_sigma_0p00075000.pt", "sha256": "9c5958490a7c307f1b6b87a96287b3924e43657a9c80e02d5d1284fad001ee5e"},
+    {"network": "Network 1", "path": "phenol_pairformer_arm1/results/protocol_v1/checkpoints/seed_01_sigma_0p00150000.pt", "sha256": "e139286bcb9461f04ae9e30ae559594cd37df2f94dfb08219e74840dafff4e83"},
+    {"network": "Network 1", "path": "phenol_pairformer_arm1/results/protocol_v1/checkpoints/seed_02_sigma_0p00037500.pt", "sha256": "58a62affdb95036bab0ca95245ee6ef17bef6aaac63089d53e7587b80b929ed2"},
+    {"network": "Network 1", "path": "phenol_pairformer_arm1/results/protocol_v1/checkpoints/seed_02_sigma_0p00075000.pt", "sha256": "91957966de3d48c4cd27ad13fe9e0a89d03ed538bf1202dfe6dfe63a701d05ee"},
+    {"network": "Network 1", "path": "phenol_pairformer_arm1/results/protocol_v1/checkpoints/seed_02_sigma_0p00150000.pt", "sha256": "305853347d70085620df855b7e3a3592801c365ef002693511f8ae1b04d01abb"},
+    {"network": "Network 2", "path": "phenol_dsm_controlled/results/clean_limit_v2/true_topology/frozen_coordinate_only_ensemble.npz", "sha256": "cccf649a469f2d68e0c576169253be688c8f8a334d9f6b72037559778efba68a"},
+    {"network": "Network 3", "path": "phenol_pairformer_arm3/results/protocol_v1/checkpoints/seed_00_sigma_0p00037500.pt", "sha256": "c5ef7ac1282000a98a1342869955087bd5fd393cfe8b0293868cca390a888292"},
+    {"network": "Network 3", "path": "phenol_pairformer_arm3/results/protocol_v1/checkpoints/seed_00_sigma_0p00075000.pt", "sha256": "47ad37b56dfd3786cb814561e3eecca7b42b01df5c98a6d772f3c3bc4a141e7f"},
+    {"network": "Network 3", "path": "phenol_pairformer_arm3/results/protocol_v1/checkpoints/seed_00_sigma_0p00150000.pt", "sha256": "4c17caaa606fb807e2b711d1c8d561d006b4e67327903245ff1ae344d02f36ae"},
+    {"network": "Network 3", "path": "phenol_pairformer_arm3/results/protocol_v1/checkpoints/seed_01_sigma_0p00037500.pt", "sha256": "e43a45a5f04165e225f8c8f30f1001a82734929a3802e9290cc6a3f527a4612c"},
+    {"network": "Network 3", "path": "phenol_pairformer_arm3/results/protocol_v1/checkpoints/seed_01_sigma_0p00075000.pt", "sha256": "b7b3f08a54340b050200762c766d6b4b1057959b5d7e9ea6527ee0cf42328ce5"},
+    {"network": "Network 3", "path": "phenol_pairformer_arm3/results/protocol_v1/checkpoints/seed_01_sigma_0p00150000.pt", "sha256": "409d551fd3fa0ec4da2c677297e56b3aa5ef5112e748ea364dfb6d8dbbb164a3"},
+    {"network": "Network 3", "path": "phenol_pairformer_arm3/results/protocol_v1/checkpoints/seed_02_sigma_0p00037500.pt", "sha256": "e3074f390607bd1e2668961e4349d925f56ab44581be0add5dd2abe89d7571d3"},
+    {"network": "Network 3", "path": "phenol_pairformer_arm3/results/protocol_v1/checkpoints/seed_02_sigma_0p00075000.pt", "sha256": "2545d83d4a9c870f4a2cce0d66b68988f5303e8632f5279e02c3dd6f6fd832fc"},
+    {"network": "Network 3", "path": "phenol_pairformer_arm3/results/protocol_v1/checkpoints/seed_02_sigma_0p00150000.pt", "sha256": "da7f0ecd5d93713c2fb6687dfb437bf0170283faafa4c3f5799652fbeba85bfb"},
+    {"network": "Network 3", "path": "phenol_pairformer_arm3/results/protocol_v1/basis_preconditioner.npz", "sha256": "29adc20981db48494d51bffb462366228cedb4f4a62326d59e7d278f8ca5c86e"},
+    {"network": "Network 3-P", "path": "phenol_pairformer_arm3/results/protocol_v1/frozen_block_projection.npz", "sha256": "8ace37e4ebc03fc16e65f0bc10a929c067bfab4bcf7f4b40e40b48ed696f7d57"}
+  ]
+}

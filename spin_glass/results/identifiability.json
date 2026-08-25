@@ -1,0 +1,357 @@
+{
+  "environment": {
+    "python": "3.10.20 (ai4s)",
+    "torch": "2.11.0+cu130",
+    "device": "cuda"
+  },
+  "model": {
+    "parameters": 116369,
+    "raw_time_embedding": true,
+    "absolute_position_embedding": true,
+    "weight_head_has_spin_inner_product_input": true,
+    "hard_locality_mask_before_score_aggregation": false,
+    "direct_W_supervision": false
+  },
+  "target": {
+    "rows": [
+      {
+        "t": 0.0001,
+        "mean_relative_tangent_error": 1.776250428520143e-05,
+        "p99_relative_tangent_error": 8.083874854492024e-05,
+        "weighted_radial_mse": 2.671157562872395e-05,
+        "radial_fraction_of_target_energy": 1.3442253475659527e-05,
+        "fraction_dot_above_0p9999": 0.63531494140625
+      },
+      {
+        "t": 0.0003,
+        "mean_relative_tangent_error": 8.846809578244574e-06,
+        "p99_relative_tangent_error": 5.19283494213596e-05,
+        "weighted_radial_mse": 3.4322674764553085e-06,
+        "radial_fraction_of_target_energy": 1.7158698710773024e-06,
+        "fraction_dot_above_0p9999": 0.28265380859375
+      },
+      {
+        "t": 0.001,
+        "mean_relative_tangent_error": 4.176098627795e-06,
+        "p99_relative_tangent_error": 3.681746238726191e-05,
+        "weighted_radial_mse": 3.335192104714224e-07,
+        "radial_fraction_of_target_energy": 1.6629651611310692e-07,
+        "fraction_dot_above_0p9999": 0.09661865234375
+      },
+      {
+        "t": 0.003,
+        "mean_relative_tangent_error": 2.1629155071423156e-06,
+        "p99_relative_tangent_error": 2.60413798969239e-05,
+        "weighted_radial_mse": 3.746583487895805e-08,
+        "radial_fraction_of_target_energy": 1.8746206364994578e-08,
+        "fraction_dot_above_0p9999": 0.03228759765625
+      },
+      {
+        "t": 0.01,
+        "mean_relative_tangent_error": 1.0909232059930218e-06,
+        "p99_relative_tangent_error": 9.275553566112649e-06,
+        "weighted_radial_mse": 3.347855548341272e-09,
+        "radial_fraction_of_target_energy": 1.6682983883242741e-09,
+        "fraction_dot_above_0p9999": 0.00982666015625
+      }
+    ]
+  },
+  "representation": {
+    "checkpoint": "spin_glass/checkpoints/epoch_26.pt",
+    "configurations": 32,
+    "support_W_energy_fraction": 0.979062033430839,
+    "nonsupport_W_energy_fraction": 0.020937966569160936,
+    "support_score_energy_over_total": 0.7460628689333637,
+    "nonsupport_score_energy_over_total": 0.10748870941430085,
+    "support_nonsupport_cross_over_total": 0.14644842165233554,
+    "full_score_relative_rmse_to_beta20_oracle": 0.3384898217802607,
+    "support_only_score_relative_rmse_to_beta20_oracle": 0.4281620530357935,
+    "full_score_scale_against_beta20_oracle": 0.7258419654519971,
+    "support_only_score_scale_against_beta20_oracle": 0.6195711435304877,
+    "mean_rowwise_full_W_null_energy_fraction": 0.9172285716263119,
+    "mean_rowwise_support_W_null_energy_fraction": 0.09943648418126329,
+    "mean_full_symmetric_map_rank_fraction": 0.15861314836199714,
+    "mean_support_symmetric_map_rank_fraction": 1.0,
+    "median_support_map_condition_number_per_configuration": 1304.3894148593154,
+    "max_support_map_condition_number_per_configuration": 56296.333017808414,
+    "shared_six_class_design_condition_number": 3.8112445436609232,
+    "shared_six_class_gram_eigenvalues": [
+      49.19916252873019,
+      211.61795806571237,
+      276.69988742829355,
+      334.9302314313271,
+      536.7486270209907,
+      714.646615841899
+    ],
+    "shared_six_class_gram": [
+      [
+        159.0190879012519,
+        0.0,
+        -124.99271359837867,
+        44.47476463747766,
+        0.0,
+        28.53632722156746
+      ],
+      [
+        0.0,
+        282.11876352847224,
+        -141.2816500205198,
+        0.0,
+        34.344745274316864,
+        20.421753588851573
+      ],
+      [
+        -124.99271359837867,
+        -141.2816500205198,
+        411.93033069094935,
+        53.885525907322204,
+        14.908415299699225,
+        69.67797146611592
+      ],
+      [
+        44.47476463747766,
+        0.0,
+        53.885525907322204,
+        330.54086198745733,
+        0.0,
+        -135.83205864697436
+      ],
+      [
+        0.0,
+        34.344745274316864,
+        14.908415299699225,
+        0.0,
+        324.2057501961276,
+        -129.48644143692528
+      ],
+      [
+        28.53632722156746,
+        20.421753588851573,
+        69.67797146611592,
+        -135.83205864697436,
+        -129.48644143692528,
+        616.0276880126946
+      ]
+    ],
+    "shared_six_class_weakest_mode_AA_BB_AB_d1_d2": [
+      1.0,
+      0.45933291634377715,
+      0.6557482002120969,
+      -0.4308059556189822,
+      -0.2364003300207838,
+      -0.3047408604008588
+    ],
+    "by_distance": [
+      {
+        "distance": 1,
+        "rms_W": 9.49128758033415,
+        "count": 2412
+      },
+      {
+        "distance": 2,
+        "rms_W": 3.1804216609061244,
+        "count": 2348
+      },
+      {
+        "distance": 3,
+        "rms_W": 1.4553196779270527,
+        "count": 2284
+      },
+      {
+        "distance": 4,
+        "rms_W": 0.2385235799558876,
+        "count": 2220
+      },
+      {
+        "distance": 5,
+        "rms_W": 0.18258005802394175,
+        "count": 2156
+      },
+      {
+        "distance": 6,
+        "rms_W": 0.10179911389570011,
+        "count": 2092
+      },
+      {
+        "distance": 7,
+        "rms_W": 0.1890079884567737,
+        "count": 2028
+      },
+      {
+        "distance": 8,
+        "rms_W": 0.05415141390427503,
+        "count": 1964
+      },
+      {
+        "distance": 9,
+        "rms_W": 0.028066400767603215,
+        "count": 1900
+      },
+      {
+        "distance": 10,
+        "rms_W": 0.05569449806318189,
+        "count": 1836
+      },
+      {
+        "distance": 11,
+        "rms_W": 0.015454830340944328,
+        "count": 1772
+      },
+      {
+        "distance": 12,
+        "rms_W": 0.008011740895710934,
+        "count": 1708
+      },
+      {
+        "distance": 13,
+        "rms_W": 0.022324182948511836,
+        "count": 1644
+      },
+      {
+        "distance": 14,
+        "rms_W": 0.05025365529081014,
+        "count": 1580
+      },
+      {
+        "distance": 15,
+        "rms_W": 0.025763640893438456,
+        "count": 1516
+      },
+      {
+        "distance": 16,
+        "rms_W": 0.013643023560948314,
+        "count": 1452
+      },
+      {
+        "distance": 17,
+        "rms_W": 0.016122763186516866,
+        "count": 1388
+      },
+      {
+        "distance": 18,
+        "rms_W": 0.00946835346840786,
+        "count": 1324
+      },
+      {
+        "distance": 19,
+        "rms_W": 0.0178190890864837,
+        "count": 1260
+      },
+      {
+        "distance": 20,
+        "rms_W": 0.008574587616699367,
+        "count": 1196
+      },
+      {
+        "distance": 21,
+        "rms_W": 0.025199916957964606,
+        "count": 1132
+      },
+      {
+        "distance": 22,
+        "rms_W": 0.013493568675004656,
+        "count": 1068
+      },
+      {
+        "distance": 23,
+        "rms_W": 0.01207608046130811,
+        "count": 1004
+      },
+      {
+        "distance": 24,
+        "rms_W": 0.017271095399992702,
+        "count": 940
+      },
+      {
+        "distance": 25,
+        "rms_W": 0.031120252079606534,
+        "count": 880
+      },
+      {
+        "distance": 26,
+        "rms_W": 0.005534193848709112,
+        "count": 820
+      },
+      {
+        "distance": 27,
+        "rms_W": 0.017041602013951603,
+        "count": 760
+      },
+      {
+        "distance": 28,
+        "rms_W": 0.014036812443036032,
+        "count": 700
+      },
+      {
+        "distance": 29,
+        "rms_W": 0.030668677195195167,
+        "count": 640
+      },
+      {
+        "distance": 30,
+        "rms_W": 0.012400266609167392,
+        "count": 580
+      },
+      {
+        "distance": 31,
+        "rms_W": 0.026467008026163787,
+        "count": 520
+      },
+      {
+        "distance": 32,
+        "rms_W": 0.015999640080275,
+        "count": 460
+      },
+      {
+        "distance": 33,
+        "rms_W": 0.025173311986513777,
+        "count": 400
+      },
+      {
+        "distance": 34,
+        "rms_W": 0.017008438502466233,
+        "count": 350
+      },
+      {
+        "distance": 35,
+        "rms_W": 0.014635714642164345,
+        "count": 300
+      },
+      {
+        "distance": 36,
+        "rms_W": 0.0104213316070105,
+        "count": 250
+      },
+      {
+        "distance": 37,
+        "rms_W": 0.0217668309067124,
+        "count": 200
+      },
+      {
+        "distance": 38,
+        "rms_W": 0.021727127666630906,
+        "count": 150
+      },
+      {
+        "distance": 39,
+        "rms_W": 0.02157579920761697,
+        "count": 110
+      },
+      {
+        "distance": 40,
+        "rms_W": 0.015930176196775697,
+        "count": 70
+      },
+      {
+        "distance": 41,
+        "rms_W": 0.01669478284205433,
+        "count": 40
+      },
+      {
+        "distance": 42,
+        "rms_W": 0.010019287515144071,
+        "count": 20
+      }
+    ]
+  }
+}
